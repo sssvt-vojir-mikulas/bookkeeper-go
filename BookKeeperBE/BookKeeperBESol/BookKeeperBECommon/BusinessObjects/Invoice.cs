@@ -9,30 +9,33 @@ namespace BookKeeperBECommon.BusinessObjects
 {
 
 
-    [Table("Invoice")]
+    [Table("BK_INVOICE")]
     public class Invoice
     {
 
+        [Key]
+        [Column("ID")]
+        public int ID { get; set; }
 
-        [Column("Year")]
+        [Column("YEAR")]
         public int Year { get; set; }
 
-        [Column("Direction")]
+        [Column("DIRECTION")]
         public DocumentDirection Direction { get; set; }
 
-        [Column("InvoiceNumber")]
+        [Column("INVOICE_NUMBER")]
         public string InvoiceNumber { get; set; }
 
-        [Column("Contact")]
+        [Column("CONTACT_ID")]
         public Contact Contact { get; set; }
 
-        [Column("TotalAmount")]
+        [Column("TOTAL_AMOUNT")]
         public decimal TotalAmount { get; set; }
 
-        [Column("DateIssued")]
+        [Column("DATE_ISSUED")]
         public DateTime? DateIssued { get; set; }
 
-        [Column("DateDue")]
+        [Column("DATE_DUE")]
         public DateTime? DateDue { get; set; }
 
 

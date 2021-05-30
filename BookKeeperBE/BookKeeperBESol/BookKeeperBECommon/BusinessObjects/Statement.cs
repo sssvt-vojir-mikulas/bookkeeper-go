@@ -8,18 +8,21 @@ namespace BookKeeperBECommon.BusinessObjects
 {
 
 
-    [Table("Statement")]
+    [Table("BK_STATEMENT")]
     public class Statement
     {
 
+        [Key]
+        [Column("ID")]
+        public int ID { get; set; }
 
-        [Column("Year")]
+        [Column("YEAR")]
         public int Year { get; set; }
-        [Column("StatementNumber")]
+        [Column("STATEMENT_NUMBER")]
         public string StatementNumber { get; set; }
-        [Column("DateIssued")]
+        [Column("DATA_ISSUED")]
         public DateTime? DateIssued { get; set; }
-        [Column("IsBooked")]
+        [Column("IS_BOOKED")]
         public bool IsBooked { get; set; }
 
 

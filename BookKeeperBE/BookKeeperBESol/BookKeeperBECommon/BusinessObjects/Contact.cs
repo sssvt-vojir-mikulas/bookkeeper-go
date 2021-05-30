@@ -8,42 +8,44 @@ namespace BookKeeperBECommon.BusinessObjects
 {
 
 
-    [Table("Contact")]
+    [Table("BK_CONTACT")]
     public class Contact
     {
+        [Key]
+        [Column("ID")]
+        public int ID { get; set; }
 
-
-        [Column("Name")]
+        [Column("NAME")]
         public string Name { get; set; }
 
-        [Column("Ico")]
+        [Column("ICO")]
         public string Ico { get; set; }
 
-        [Column("Dic")]
+        [Column("DIC")]
         public string Dic { get; set; }
 
-        [Column("BankAccount")]
+        [Column("BANK_ACCOUNT")]
         public string BankAccount { get; set; }
 
-        [Column("Mobile")]
+        [Column("MOBILE")]
         public string Mobile { get; set; }
 
-        [Column("Email")]
+        [Column("EMAIL")]
         public string Email { get; set; }
 
-        [Column("Www")]
+        [Column("WWW")]
         public string Www { get; set; }
 
-        [Column("AddressStreet")]
+        [Column("ADDRESS_STREET")]
         public string AddressStreet { get; set; }
 
-        [Column("AddressCity")]
+        [Column("ADDRESS_CITY")]
         public string AddressCity { get; set; }
 
-        [Column("AddressZip")]
+        [Column("ADDRESS_ZIP")]
         public string AddressZip { get; set; }
 
-        [Column("AddressCountry")]
+        [Column("ADDRESS_COUNTRY")]
         public string AddressCountry { get; set; }
 
 

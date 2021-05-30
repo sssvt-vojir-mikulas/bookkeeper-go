@@ -8,27 +8,30 @@ namespace BookKeeperBECommon.BusinessObjects
 {
 
 
-    [Table("InvoiceItem")]
+    [Table("BK_INVOICE_ITEM")]
     public class InvoiceItem
     {
 
-        
-        [Column("Invoice")]
+        [Key]
+        [Column("ID")]
+        public int ID { get; set; }
+
+        [Column("INVOICE_ID")]
         public Invoice Invoice { get; set; }
 
-        [Column("Ordinal")]
+        [Column("ORDINAL")]
         public int Ordinal { get; set; }
 
-        [Column("Description")]
+        [Column("DESCRIPTION")]
         public string Description { get; set; }
 
-        [Column("Quantity")]
+        [Column("QUANTITY")]
         public double Quantity { get; set; }
 
-        [Column("AmountPerUnit")]
+        [Column("AMOUNT_PER_UNIT")]
         public decimal AmountPerUnit { get; set; }
 
-        [Column("Amount")]
+        [Column("AMOUNT")]
         public decimal Amount { get; set; }
 
 
