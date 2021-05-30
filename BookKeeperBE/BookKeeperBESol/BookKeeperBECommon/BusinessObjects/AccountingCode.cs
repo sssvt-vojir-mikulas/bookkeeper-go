@@ -8,18 +8,20 @@ namespace BookKeeperBECommon.BusinessObjects
 {
 
 
-    [Table("AccountingCode")]
+    [Table("BK_ACCOUNTING_CODE")]
     public class AccountingCode
     {
 
-
-        [Column("Code")]
+        [Key]
+        [Column("ID")]
+        public int ID { get; set; }
+        [Column("CODE")]
         public string Code { get; set; }
-        [Column("Name")]
+        [Column("NAME")]
         public string Name { get; set; }
-        [Column("Note")]
+        [Column("NOTE")]
         public string Note { get; set; }
-        [Column("IsTaxable")]
+        [Column("IS_TAXABLE")]
         public bool IsTaxable { get; set; }
 
 

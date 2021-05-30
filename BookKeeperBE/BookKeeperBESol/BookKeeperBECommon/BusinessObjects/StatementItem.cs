@@ -8,32 +8,36 @@ namespace BookKeeperBECommon.BusinessObjects
 {
 
 
-    [Table("StatementItem")]
+    [Table("BK_STATEMENT_ITEM")]
     public class StatementItem
     {
 
+        [Key]
+        [Column("ID")]
+        public int ID { get; set; }
 
-        [Column("Statement")]
+        [Column("STATEMENT_ID")]
         public Statement Statement { get; set; }
-        [Column("Ordinal")]
+
+        [Column("ORDINAL")]
         public int Ordinal { get; set; }
-        [Column("DateTransaction")]
+        [Column("DATE_TRANSACTION")]
         public DateTime? DateTransaction { get; set; }
-        [Column("Description")]
+        [Column("DESCRIPTION")]
         public string Description { get; set; }
-        [Column("Accounting")]
+        [Column("ACCOUNTING_CODE_ID")]
         public AccountingCode Accounting { get; set; }
-        [Column("Contact")]
+        [Column("CONTACT_ID")]
         public Contact Contact { get; set; }
-        [Column("Amount")]
+        [Column("AMOUNT")]
         public decimal Amount { get; set; }
-        [Column("ContraAccount")]
+        [Column("CONTRA_ACCOUNT")]
         public string ContraAccount { get; set; }
-        [Column("Vs")]
+        [Column("VS")]
         public string Vs { get; set; }
-        [Column("Ks")]
+        [Column("KS")]
         public string Ks { get; set; }
-        [Column("Ss")]
+        [Column("SS")]
         public string Ss { get; set; }
 
 

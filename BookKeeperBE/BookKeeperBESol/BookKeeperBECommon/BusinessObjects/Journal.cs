@@ -8,44 +8,46 @@ namespace BookKeeperBECommon.BusinessObjects
 {
 
 
-    [Table("Journal")]
+    [Table("BK_JOURNAL")]
     public class Journal
     {
 
-
-        [Column("Year")]
+        [Key]
+        [Column("ID")]
+        public int ID { get; set; }
+        [Column("YEAR")]
         public int Year { get; set; }
-        [Column("Ordinal")]
+        [Column("ORDINAL")]
         public int Ordinal { get; set; }
-        [Column("StatementItem")]
+        [Column("STATEMENT_ITEM_ID")]
         public StatementItem StatementItem { get; set; }
-        [Column("ReceiptItem")]
+        [Column("RECEIPT_ITEM_ID")]
         public ReceiptItem ReceiptItem { get; set; }
-        [Column("Invoice")]
+        [Column("INVOICE_ID")]
         public Invoice Invoice { get; set; }
-        [Column("DateBooked")]
+        [Column("DATE_BOOKED")]
         public DateTime DateBooked { get; set; }
 
 
-        [Column("DateTransaction")]
+        [Column("DATE_TRANSACTION")]
         public DateTime? DateTransaction { get; set; }
-        [Column("Description")]
+        [Column("DESCRIPTION")]
         public string Description { get; set; }
-        [Column("AccountingCode")]
+        [Column("ACCOUNTING_CODE_ID")]
         public AccountingCode AccountingCode { get; set; }
 
 
-        [Column("CashCredit")]
+        [Column("CASH_CREDIT")]
         public decimal? CashCredit { get; set; }
-        [Column("CashDebit")]
+        [Column("CASH_DEBIT")]
         public decimal? CashDebit { get; set; }
-        [Column("CashBalance")]
+        [Column("CASH_BALANCE")]
         public decimal? CashBalance { get; set; }
-        [Column("BankCredit")]
+        [Column("BANK_CREDIT")]
         public decimal? BankCredit { get; set; }
-        [Column("BankDebit")]
+        [Column("BANK_DEBIT")]
         public decimal? BankDebit { get; set; }
-        [Column("BankBalance")]
+        [Column("BANK_BALANCE")]
         public decimal? BankBalance { get; set; }
 
 

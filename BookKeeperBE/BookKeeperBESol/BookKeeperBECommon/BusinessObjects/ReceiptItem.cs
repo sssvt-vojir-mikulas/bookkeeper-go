@@ -8,20 +8,22 @@ namespace BookKeeperBECommon.BusinessObjects
 {
 
 
-    [Table("ReceiptItem")]
+    [Table("BK_RECEIPT_ITEM")]
     public class ReceiptItem
     {
 
-
-        [Column("Receipt")]
+        [Key]
+        [Column("ID")]
+        public int ID { get; set; }
+        [Column("RECEIPT_ID")]
         public Receipt Receipt { get; set; }
-        [Column("Ordinal")]
+        [Column("ORDINAL")]
         public int Ordinal { get; set; }
-        [Column("Description")]
+        [Column("DESCRIPTION")]
         public string Description { get; set; }
-        [Column("Accounting")]
+        [Column("ACCOUNTING_CODE_ID")]
         public AccountingCode Accounting { get; set; }
-        [Column("Amount")]
+        [Column("AMOUNT")]
         public decimal Amount { get; set; }
 
 
