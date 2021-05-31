@@ -4,8 +4,9 @@
     "\\BookKeeperBE",
     "\\BookKeeperBE\\BookKeeperBESol",
     "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon",
-    "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon\\BusinessObjects"
+    "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon\\BusinessObjects",
+    "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon\\Repos"
   ],
-  "SelectedNode": "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon\\BusinessObjects\\Invoice.cs",
+  "SelectedNode": "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon\\BusinessObjects\\User.cs",
   "PreviewInSolutionExplorer": false
 }

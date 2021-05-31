@@ -18,10 +18,13 @@ namespace BookKeeperBECommon.BusinessObjects
 
         [Column("YEAR")]
         public int Year { get; set; }
+
         [Column("STATEMENT_NUMBER")]
         public string StatementNumber { get; set; }
+
         [Column("DATA_ISSUED")]
         public DateTime? DateIssued { get; set; }
+
         [Column("IS_BOOKED")]
         public bool IsBooked { get; set; }
 
