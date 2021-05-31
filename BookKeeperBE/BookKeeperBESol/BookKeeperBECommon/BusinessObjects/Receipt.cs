@@ -22,6 +22,8 @@ namespace BookKeeperBECommon.BusinessObjects
         public DocumentDirection Direction { get; set; }
         [Column("RECEIPT_NUMBER")]
         public string ReceiptNumber { get; set; }
+
+        [ForeignKey]
         [Column("CONTACT_ID")]
         public Contact Contact { get; set; }
         [Column("NOTE")]

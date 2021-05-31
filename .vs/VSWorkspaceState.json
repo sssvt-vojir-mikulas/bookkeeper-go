@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BookKeeperBE",
+    "\\BookKeeperBE\\BookKeeperBESol",
+    "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon",
+    "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon\\BusinessObjects"
+  ],
+  "SelectedNode": "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon\\BusinessObjects\\Invoice.cs",
+  "PreviewInSolutionExplorer": false
+}
