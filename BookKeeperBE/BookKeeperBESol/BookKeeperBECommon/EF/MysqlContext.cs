@@ -24,6 +24,13 @@ namespace BookKeeperBECommon.EF
 
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Statement> Statements { get; set; }
+        public DbSet<Receipt> Receipts { get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<Journal> Journals { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<AccountingCode> AccountingCodes { get; set; }
+
 
 
 
