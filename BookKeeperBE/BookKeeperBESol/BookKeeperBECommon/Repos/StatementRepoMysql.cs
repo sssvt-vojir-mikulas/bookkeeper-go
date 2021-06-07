@@ -57,7 +57,7 @@ namespace BookKeeperBECommon.Repos
                 //            where u.StatementNumber == statement.StatementNumber
                 //            select u;
 
-                IQueryable<Statement> query = BuildQuery(context.Statement, statement);
+                IQueryable<Statement> query = BuildQuery(context.Statements, statement);
 
                 var statements = query.ToList<Statement>();
                 return statements;

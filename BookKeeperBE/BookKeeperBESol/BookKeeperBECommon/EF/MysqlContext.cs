@@ -30,8 +30,9 @@ namespace BookKeeperBECommon.EF
         public DbSet<Journal> Journals { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<AccountingCode> AccountingCodes { get; set; }
-
-
+        public DbSet<StatementItem> StatementItems { get; set; }
+        public DbSet<ReceiptItem> ReceiptItems { get; set; }
+        public DbSet<InvoiceItem> InvoiceItems { get; set; }
 
 
         public MysqlContext()
