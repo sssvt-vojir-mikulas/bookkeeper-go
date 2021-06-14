@@ -16,7 +16,7 @@ namespace BookKeeperBECommon.BusinessObjects
         [Column("ID")]
         public int ID { get; set; }
 
-        [ForeignKey]
+        //[ForeignKey]
         [Column("RECEIPT_ID")]
         public Receipt Receipt { get; set; }
 
@@ -26,7 +26,7 @@ namespace BookKeeperBECommon.BusinessObjects
         [Column("DESCRIPTION")]
         public string Description { get; set; }
 
-        [ForeignKey]
+        //[ForeignKey]
         [Column("ACCOUNTING_CODE_ID")]
         public AccountingCode Accounting { get; set; }
 

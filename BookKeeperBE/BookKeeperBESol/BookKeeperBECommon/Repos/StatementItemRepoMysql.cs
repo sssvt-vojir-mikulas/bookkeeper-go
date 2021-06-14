@@ -81,7 +81,7 @@ namespace BookKeeperBECommon.Repos
                 //            where u.Contactname == contact.Contactname
                 //            select u;
 
-                IQueryable<StatementItem> query = BuildQuery(context.StatementItems, contact);
+                IQueryable<StatementItem> query = BuildQuery(context.StatementItems, statementItem);
 
                 var exists = query.Any<StatementItem>();
                 return exists;

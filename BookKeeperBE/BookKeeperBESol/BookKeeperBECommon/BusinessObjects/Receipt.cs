@@ -26,7 +26,7 @@ namespace BookKeeperBECommon.BusinessObjects
         [Column("RECEIPT_NUMBER")]
         public string ReceiptNumber { get; set; }
 
-        [ForeignKey]
+        //[ForeignKey]
         [Column("CONTACT_ID")]
         public Contact Contact { get; set; }
 
