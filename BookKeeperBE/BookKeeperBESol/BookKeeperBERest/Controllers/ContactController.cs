@@ -15,7 +15,7 @@ namespace BookKeeperBERest.Controllers
 
 
 
-    //[Route("api/users")]
+    //[Route("api/contacts")]
     [ApiController]
     [Route("/api/contacts")]
     public class ContactController : ControllerBase
@@ -25,7 +25,7 @@ namespace BookKeeperBERest.Controllers
 
         private readonly ILogger<ContactController> _logger;
 
-        private readonly UserService _userService;
+        private readonly ContactService _contactService;
 
 
 
@@ -33,113 +33,113 @@ namespace BookKeeperBERest.Controllers
         {
             _logger = logger;
             // Temporary solution
-            _userService = new UserService();
+            _contactService = new ContactService();
         }
 
 
 
-        // REST API path: GET /api/users
-        // REST API path: GET /api/users/?username=ba
-        //public IEnumerable<User> Get()
+        // REST API path: GET /api/contacts
+        // REST API path: GET /api/contacts/?contactname=ba
+        //public IEnumerable<Contact> Get()
         [HttpGet]
-        public IActionResult Get([FromQuery] User user)
+        public IActionResult Get([FromQuery] Contact contact)
         {
-            IEnumerable<User> users = _userService.SearchUsers(user);
+            IEnumerable<Contact> contacts = _contactService.SearchUsers(contact);
             // HTTP status code: 200 (OK)
-            return Ok(users);
-            //return users;
+            return Ok(contacts);
+            //return contacts;
         }
 
 
 
-        // REST API path: GET /api/users/3
-        //public User Get(int id)
+        // REST API path: GET /api/contacts/3
+        //public Contact Get(int id)
         [HttpGet("{id:int}")]
         public IActionResult Get(int id)
         {
-            User user = new User { ID = id };
+            Contact contact = new Contact { ID = id };
             try
             {
-                user = _userService.LoadUser(id);
+                contact = _contactService.LoadUser(id);
             }
             catch (Exception)
             {
-                // No such user (non-existing ID).
+                // No such contact (non-existing ID).
                 // HTTP status code: 404 (Not Found)
-                return NotFound(new { id = user.ID });
+                return NotFound(new { id = contact.ID });
             }
             // HTTP status code: 200 (OK)
-            return Ok(user);
-            // return user;
+            return Ok(contact);
+            // return contact;
         }
 
 
 
-        // REST API path: PUT /api/users
+        // REST API path: PUT /api/contacts
         // Data is in the request body in JSON format.
         // Therefore, we have an HTTP header of "Content-Type", with a value of "application/json".
         [HttpPut]
-        public IActionResult Put(User user)
+        public IActionResult Put(Contact contact)
         {
-            _logger.LogInformation(user.ToString());
+            _logger.LogInformation(contact.ToString());
 
-            // Is there a user with the given ID?
-            bool exists = _userService.ExistsUser(user.ID);
+            // Is there a contact with the given ID?
+            bool exists = _contactService.ExistsUser(contact.ID);
             if ( ! exists)
             {
                 // HTTP status code: 404 (Not Found)
-                return NotFound(user);
+                return NotFound(contact);
             }
 
-            // Update the user.
-            _userService.SaveUser(user);
+            // Update the contact.
+            _contactService.SaveUser(contact);
 
             // REST API recommends either a status code of 200 (OK) or 204 (No Content) to be returned.
             // HTTP status code: 200 (OK)
-            //return Ok(user);
+            //return Ok(contact);
             // HTTP status code: 204 (No Content)
             return NoContent();
         }
 
 
 
-        // REST API path: POST /api/users
+        // REST API path: POST /api/contacts
         // Data is in the request body in JSON format.
         // Therefore, we have an HTTP header of "Content-Type", with a value of "application/json".
         [HttpPost]
-        public IActionResult Post(User user)
+        public IActionResult Post(Contact contact)
         {
-            _logger.LogInformation(user.ToString());
+            _logger.LogInformation(contact.ToString());
 
-            // Add a new user.
-            User newUser = _userService.SaveUser(user);
+            // Add a new contact.
+            Contact newContact = _contactService.SaveUser(contact);
 
             // HTTP status code: 201 (Created)
-            return Created(this.Request.Path, newUser);
+            return Created(this.Request.Path, newContact);
         }
 
 
 
-        // REST API path: DELETE /api/users/3
+        // REST API path: DELETE /api/contacts/3
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {
             _logger.LogInformation(id.ToString());
 
-            // Is there a user with the given ID?
-            bool exists = _userService.ExistsUser(id);
+            // Is there a contact with the given ID?
+            bool exists = _contactService.ExistsUser(id);
             if ( ! exists )
             {
                 // HTTP status code: 404 (Not Found)
                 return NotFound(new { id = id });
             }
 
-            // Delete the user.
-            User userDeleted = _userService.DeleteUser(id);
+            // Delete the contact.
+            Contact contactDeleted = _contactService.DeleteUser(id);
 
             // HTTP status code: 200 (OK)
-            return Ok(userDeleted);
-            //return Ok(new { id = userDeleted.ID });
+            return Ok(contactDeleted);
+            //return Ok(new { id = contactDeleted.ID });
         }
 
 
