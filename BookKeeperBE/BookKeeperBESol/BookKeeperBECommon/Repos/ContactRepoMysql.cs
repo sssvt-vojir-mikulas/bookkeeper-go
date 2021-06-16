@@ -54,7 +54,7 @@ namespace BookKeeperBECommon.Repos
             {
 
                 //var query = from u in context.Contacts
-                //            where u.Contactname == contact.Contactname
+                //            where u.Name == contact.Name
                 //            select u;
 
                 IQueryable<Contact> query = BuildQuery(context.Contacts, contact);
@@ -78,7 +78,7 @@ namespace BookKeeperBECommon.Repos
             {
 
                 //var query = from u in context.Contacts
-                //            where u.Contactname == contact.Contactname
+                //            where u.Name == contact.Name
                 //            select u;
 
                 IQueryable<Contact> query = BuildQuery(context.Contacts, contact);
@@ -172,27 +172,27 @@ namespace BookKeeperBECommon.Repos
             if (contact.ID != 0)
             {
                 query = query.Where(u => u.ID == contact.ID);
-            }/*
-            if (contact.Contactname != null)
+            }
+            if (contact.Name != null)
             {
-                //query = query.Where(u => u.Contactname == contact.Contactname);
-                string contactname = contact.Contactname;
+                //query = query.Where(u => u.Name == contact.Name);
+                string contactname = contact.Name;
                 //if ( ! contactname.Contains('*') )
                 //{
-                //    query = query.Where(u => u.Contactname == contactname);
+                //    query = query.Where(u => u.Name == contactname);
                 //}
                 //else
                 //{
                 //    // For search terms like 'ba*', replace '*' with '%' and use LIKE (e.g. WHERE USERNAME LIKE 'ba%').
                 //    //contactname = contactname.Replace('*', '%');
-                //    //query = query.Where(u => SqlMethods.Like(u.Contactname, contactname));
+                //    //query = query.Where(u => SqlMethods.Like(u.Name, contactname));
                 //}
                 int countStars = contactname.Count(c => c == '*');
                 switch (countStars)
                 {
                     case 0:
                         // No asterisks (wildcards) at all.
-                        query = query.Where(u => u.Contactname == contactname);
+                        query = query.Where(u => u.Name == contactname);
                         break;
                     case 1:
                         // One asterisk.
@@ -205,16 +205,16 @@ namespace BookKeeperBECommon.Repos
                                 // Wildcard at the beginning of the search term.
                                 // WHERE USERNAME LIKE '%ba'
                                 string term = contactname.Substring(1);
-                                query = query.Where(u => u.Contactname.EndsWith(term));
-                                //query = query.Where(u => u.Contactname.EndsWith(term, StringComparison.OrdinalIgnoreCase));
+                                query = query.Where(u => u.Name.EndsWith(term));
+                                //query = query.Where(u => u.Name.EndsWith(term, StringComparison.OrdinalIgnoreCase));
                             }
                             else if (contactname[contactname.Length - 1] == '*')
                             {
                                 // Wildcard at the end of the search term.
                                 // WHERE USERNAME LIKE 'ba%'
                                 string term = contactname.Substring(0, contactname.Length - 1);
-                                query = query.Where(u => u.Contactname.StartsWith(term));
-                                //query = query.Where(u => u.Contactname.StartsWith(term, StringComparison.OrdinalIgnoreCase));
+                                query = query.Where(u => u.Name.StartsWith(term));
+                                //query = query.Where(u => u.Name.StartsWith(term, StringComparison.OrdinalIgnoreCase));
                             }
                             else
                             {
@@ -227,8 +227,8 @@ namespace BookKeeperBECommon.Repos
                                     throw new Exception($"This situation is not expected. The search term: {contactname}");
                                 }
                                 string[] terms = contactname.Split('*');
-                                query = query.Where(u => u.Contactname.StartsWith(terms[0]) && u.Contactname.EndsWith(terms[1]));
-                                //query = query.Where(u => u.Contactname.StartsWith(terms[0], StringComparison.OrdinalIgnoreCase) && u.Contactname.EndsWith(terms[1], StringComparison.OrdinalIgnoreCase));
+                                query = query.Where(u => u.Name.StartsWith(terms[0]) && u.Name.EndsWith(terms[1]));
+                                //query = query.Where(u => u.Name.StartsWith(terms[0], StringComparison.OrdinalIgnoreCase) && u.Name.EndsWith(terms[1], StringComparison.OrdinalIgnoreCase));
                             }
                         }
                         break;
@@ -243,14 +243,14 @@ namespace BookKeeperBECommon.Repos
                             // Expect one non-asterisk character at least.
                             // WHERE USERNAME LIKE '%ba%'
                             string term = contactname.Substring(1, contactname.Length - 2);
-                            query = query.Where(u => u.Contactname.Contains(term));
-                            //query = query.Where(u => u.Contactname.Contains(term, StringComparison.OrdinalIgnoreCase));
+                            query = query.Where(u => u.Name.Contains(term));
+                            //query = query.Where(u => u.Name.Contains(term, StringComparison.OrdinalIgnoreCase));
                         }
                         break;
                     default:
                         throw new NotSupportedException($"This search term is not supported: {contactname}");
                 }
-            }*/
+            }
             // ...
 
             return query;

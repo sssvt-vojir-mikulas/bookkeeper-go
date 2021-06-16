@@ -28,8 +28,8 @@ namespace BookKeeperBECommon.BusinessObjects
 
         [ForeignKey("Contact")]
         [Column("CONTACT_ID")]
-        public Contact Contact { get; set; }
         public int ContactId { get; set; }
+        public Contact Contact { get; set; }
 
         [Column("NOTE")]
         public string Note { get; set; }

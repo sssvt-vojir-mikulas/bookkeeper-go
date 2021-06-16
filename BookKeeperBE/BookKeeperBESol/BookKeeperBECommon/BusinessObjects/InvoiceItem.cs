@@ -18,8 +18,8 @@ namespace BookKeeperBECommon.BusinessObjects
 
         [ForeignKey("Invoice")]
         [Column("INVOICE_ID")]
-        public Invoice Invoice { get; set; }
         public int InvoiceId { get; set; }
+        public Invoice Invoice { get; set; }
 
         [Column("ORDINAL")]
         public int Ordinal { get; set; }

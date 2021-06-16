@@ -44,7 +44,7 @@ namespace BookKeeperBECommon.Services
 
 
 
-        public IList<Contact> SearchUsers(Contact contact)
+        public IList<Contact> SearchContacts(Contact contact)
         {
             if ((contact.ID == 0) && (contact.Name == null))
             {

@@ -44,7 +44,7 @@ namespace BookKeeperBERest.Controllers
         [HttpGet]
         public IActionResult Get([FromQuery] Contact contact)
         {
-            IEnumerable<Contact> contacts = _contactService.SearchUsers(contact);
+            IEnumerable<Contact> contacts = _contactService.SearchContacts(contact);
             // HTTP status code: 200 (OK)
             return Ok(contacts);
             //return contacts;

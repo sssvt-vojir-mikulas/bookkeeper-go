@@ -25,18 +25,18 @@ namespace BookKeeperBECommon.BusinessObjects
 
         [ForeignKey("StatementItem")]
         [Column("STATEMENT_ITEM_ID")]
-        public StatementItem StatementItem { get; set; }
         public int StatementItemId { get; set; }
+        public StatementItem StatementItem { get; set; }
 
         [ForeignKey("ReceiptItem")]
         [Column("RECEIPT_ITEM_ID")]
-        public ReceiptItem ReceiptItem { get; set; }
         public int ReceiptItemId { get; set; }
+        public ReceiptItem ReceiptItem { get; set; }
 
         [ForeignKey("Invoice")]
         [Column("INVOICE_ID")]
-        public Invoice Invoice { get; set; }
         public int InvoiceId { get; set; }
+        public Invoice Invoice { get; set; }
 
         [Column("DATE_BOOKED")]
         public DateTime DateBooked { get; set; }
@@ -50,8 +50,8 @@ namespace BookKeeperBECommon.BusinessObjects
 
         [ForeignKey("AccountingCode")]
         [Column("ACCOUNTING_CODE_ID")]
-        public AccountingCode AccountingCode { get; set; }
         public int AccountingCodeId { get; set; }
+        public AccountingCode AccountingCode { get; set; }
 
 
         [Column("CASH_CREDIT")]
