@@ -1,0 +1,94 @@
+label {
+    color: #435960;
+    font-weight: bold;
+     display: block;
+     margin-top: 15px;
+  }
+  input {
+    font-size: 1em;
+    padding: .5rem;
+  }
+  button {
+    margin-top: 20px;
+    background-color: #eee;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  button:hover {
+    background-color: #cfd8dc;
+  }
+  button:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+  }
+
+.create-contact {
+    display:flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.contacts{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows:repeat(4,1fr);
+    gap:1vw;
+    list-style: none;
+    
+}
+.contacts > li {
+    transition:0.2s;
+}
+ 
+.contacts-item{
+    border: 2px black solid;
+    border-radius: 5px;
+    padding: 20px;
+    list-style: none;
+
+    display:flex;
+      
+     
+}
+
+.contacts-item li {
+    list-style: none;
+     
+}
+.contacts-item ul {
+    list-style: none;
+     
+}
+
+.contacts-item li:nth-child(1) {
+    font-size: 2rem;
+}
+
+
+
+.contacts-item a{
+   color:black;
+   text-decoration: none;
+  
+}
+
+.contacts-item button{
+      margin:0 auto;
+    align-self: flex-start;
+    justify-self: right;
+      
+    border-radius: 0;
+    background-color: white;
+    border:none;
+ }
+
+ 
+ .contacts-item button:hover{
+     
+    
+    cursor: pointer;
+ }
+
+ 

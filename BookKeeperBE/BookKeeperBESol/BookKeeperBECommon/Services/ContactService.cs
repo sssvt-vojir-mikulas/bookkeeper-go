@@ -28,14 +28,14 @@ namespace BookKeeperBECommon.Services
 
 
 
-        public IList<Contact> GetListOfUsers()
+        public IList<Contact> GetListOfContacts()
         {
             return this.contactRepo.GetList();
         }
 
 
 
-        public IList<Contact> FindListOfUsers(string namePattern)
+        public IList<Contact> FindListOfContacts(string namePattern)
         {
             Contact searchCriteriaAsUser = new Contact { Name = $"*{namePattern}*" };
             //User searchCriteriaAsUser = new User { Username = usernamePattern };
@@ -49,19 +49,19 @@ namespace BookKeeperBECommon.Services
             if ((contact.ID == 0) && (contact.Name == null))
             {
                 // Empty user-search criteria.
-                return GetListOfUsers();
+                return GetListOfContacts();
             }
             if ((contact.ID == 0) && (contact.Name != null))
             {
                 // Only the Username property has been set.
-                return FindListOfUsers(contact.Name);
+                return FindListOfContacts(contact.Name);
             }
             return this.contactRepo.FindList(contact);
         }
 
 
 
-        public bool ExistsUser(int id)
+        public bool ExistsContact(int id)
         {
             Contact userToCheck = new Contact { ID = id };
             bool exists = this.contactRepo.Exists(userToCheck);
@@ -70,7 +70,7 @@ namespace BookKeeperBECommon.Services
 
 
 
-        public Contact LoadUser(int id)
+        public Contact LoadContact(int id)
         {
             Contact userToLoad = new Contact { ID = id };
             Contact userLoaded = this.contactRepo.Load(userToLoad);
@@ -80,31 +80,31 @@ namespace BookKeeperBECommon.Services
 
 
         //public void SaveUser(User user)
-        public Contact SaveUser(Contact user)
+        public Contact SaveContact(Contact contact)
         {
-            Contact userToReturn = user;
-            if (user.ID == 0)
+            Contact contactToReturn = contact;
+            if (contact.ID == 0)
             {
-                this.contactRepo.Add(user);
+                this.contactRepo.Add(contact);
                 // Find all users with the given username.
-                List<Contact> listOfUsersToProcess = (List<Contact>) this.contactRepo.FindList(user);
+                List<Contact> listOfUsersToProcess = (List<Contact>) this.contactRepo.FindList(contact);
                 // Sort the list of users by their ID's in an ascending order.
                 listOfUsersToProcess.Sort((u1, u2) => u1.ID - u2.ID);
                 // Get the last user (with the greatest ID).
                 //userToReturn = listOfUsersToProcess[0];
-                userToReturn = listOfUsersToProcess[listOfUsersToProcess.Count - 1];
+                contactToReturn = listOfUsersToProcess[listOfUsersToProcess.Count - 1];
             }
             else
             {
-                this.contactRepo.Store(user);
+                this.contactRepo.Store(contact);
             }
-            return userToReturn;
+            return contactToReturn;
         }
 
 
 
         //public void DeleteUser(int id)
-        public Contact DeleteUser(int id)
+        public Contact DeleteContact(int id)
         {
             Contact userToDelete = new Contact { ID = id };
             Contact userToDeleteFound = this.contactRepo.Load(userToDelete);

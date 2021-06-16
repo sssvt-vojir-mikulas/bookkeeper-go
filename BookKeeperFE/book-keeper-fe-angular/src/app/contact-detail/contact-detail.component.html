@@ -1,0 +1,61 @@
+<div *ngIf="contact">
+
+    <h2>{{contact.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{contact.id}}</div>
+    <div>
+        <label for="contact-name">Name: </label>
+        <input id="contact-name" [(ngModel)]="contact.name" placeholder="name"/>
+    </div>
+    <div>
+        <label for="contact-ico">Ico: </label>
+        <input id="contact-ico" [(ngModel)]="contact.ico" placeholder="ico"/>
+    </div>
+    <div>
+        <label for="contact-dic">Dic: </label>
+        <input id="contact-dic" [(ngModel)]="contact.dic" placeholder="dic"/>
+    </div>
+    <div>
+        <label for="contact-bankaccount">Bank Account: </label>
+        <input id="contact-bankaccount" [(ngModel)]="contact.bankAccount" placeholder="bankAccount"/>
+    </div>
+     
+    <div>
+        <label for="contact-mobile">Mobile: </label>
+        <input id="contact-mobile" [(ngModel)]="contact.mobile" placeholder="mobile"/>
+    </div>
+
+    <div>
+        <label for="contact-email">Email: </label>
+        <input id="contact-email" [(ngModel)]="contact.email" placeholder="email"/>
+    </div>
+
+    <div>
+        <label for="contact-www">www: </label>
+        <input id="contact-www" [(ngModel)]="contact.www" placeholder="www"/>
+    </div>
+
+    <div>
+        <label for="contact-addressstreet">addressStreet: </label>
+        <input id="contact-addressstreet" [(ngModel)]="contact.addressStreet" placeholder="addressStreet"/>
+    </div>
+
+    <div>
+        <label for="contact-addressCity">addressCity: </label>
+        <input id="contact-addressCity" [(ngModel)]="contact.addressCity" placeholder="addressCity"/>
+    </div>
+
+    <div>
+        <label for="contact-addresszip">addressZip: </label>
+        <input id="contact-addresszip" [(ngModel)]="contact.addressZip" placeholder="addressZip"/>
+    </div>
+
+    <div>
+        <label for="contact-addresscountry">addressCountry: </label>
+        <input id="contact-addresscountry" [(ngModel)]="contact.addressCountry" placeholder="addressCountry"/>
+    </div>
+
+</div>
+
+<button (click)="goBack()">go back</button>
+
+<button (click)="save()">save</button>

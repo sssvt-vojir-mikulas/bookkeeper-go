@@ -29,9 +29,12 @@ h2 {
     text-align: center;
     width: 100%;
     min-width: 70px;
+    min-height: 55px;
     margin: .5rem auto;
     box-sizing: border-box;
   
+    display: grid;
+    place-items: center;
     /* flexbox */
     order: 0;
     flex: 0 1 auto;

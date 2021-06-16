@@ -6,4 +6,13 @@
     </a>
 </div>
 
+<h2>Top Contacts</h2>
+<div class="users-menu">
+    <a *ngFor="let contact of contacts"
+      routerLink="/detail-contact/{{contact.id}}">
+        {{contact.name}}
+    </a>
+</div>
 <app-user-search></app-user-search>
+<app-contact-search></app-contact-search>
+

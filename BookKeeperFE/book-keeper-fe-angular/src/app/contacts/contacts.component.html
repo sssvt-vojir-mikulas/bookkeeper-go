@@ -1,0 +1,70 @@
+<h2>My Contacts</h2>
+
+<div class="create-contact">
+    <label for="new-contact-name">Name: </label>
+    <input id="new-contact-name" #contactName />
+
+    <label for="new-contact-ico">Ico: </label>
+    <input id="new-contact-ico" #contactIco />
+
+    <label for="new-contact-dic">Dic: </label>
+    <input id="new-contact-dic" #contactDic />
+
+    <label for="new-contact-bankaccount">Bank Account: </label>
+    <input id="new-contact-bankaccount" #contactBankAccount />
+
+    <label for="new-contact-mobile">Mobile: </label>
+    <input id="new-contact-mobile" #contactMobile />
+
+    <label for="new-contact-email">Email: </label>
+    <input id="new-contact-email" #contactEmail />
+
+    <label for="new-contact-www">Www: </label>
+    <input id="new-contact-www" #contactWww />
+
+    <label for="new-contact-adressstreet">Adress street: </label>
+    <input id="new-contact-adressstreet" #contactAdressStreet />
+
+    <label for="new-contact-adresscity">Adress city: </label>
+    <input id="new-contact-adresscity" #contactAdressCity />
+    
+    <label for="new-contact-adresszip">Adress zip: </label>
+    <input id="new-contact-adresszip" #contactAdressZip />
+
+    <label for="new-contact-adresscountry">Adress country: </label>
+    <input id="new-contact-adresscountry" #contactAdressCountry />
+
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button class="add-button" (click)="add(contactName.value, contactIco.value,contactDic.value, contactBankAccount.value,contactMobile.value, contactEmail.value,contactWww.value, contactAdressStreet.value,contactAdressCity.value, contactAdressZip.value,contactAdressCountry.value);">
+        Add contact
+    </button>
+</div>
+
+<ul class="contacts">
+    <!--
+    <li *ngFor="let user of users"
+        [class.selected]="user === selectedUser"
+        (click)="onSelect(user)">
+    -->
+    <li *ngFor="let contact of contacts" class="contacts-item">
+        <a routerLink="/detail-contact/{{contact.id}}">
+            <ul>
+                <li><span class="badge">{{contact.id}}</span> {{contact.name}} </li>
+                <li> {{contact.ico}}   </li>
+                <li> {{contact.dic}}   </li>
+                <li> {{contact.bankAccount}}   </li>
+                <li> {{contact.mobile}}   </li>
+                <li> {{contact.email}}   </li>
+                <li> {{contact.www}}   </li>
+                <li> {{contact.addressStreet}}   </li>
+                <li> {{contact.addressCity}}   </li>
+                <li> {{contact.addressZip}}   </li>
+                <li> {{contact.addressCountry}}   </li>
+            </ul>
+        </a>
+        <button class="delete" title="delete contact"
+          (click)="delete(contact)">✖</button>
+    </li>
+</ul>
+
+<!-- <app-user-detail [user]="selectedUser"></app-user-detail> -->

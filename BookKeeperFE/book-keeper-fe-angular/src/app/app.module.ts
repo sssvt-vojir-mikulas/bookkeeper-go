@@ -10,6 +10,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserSearchComponent } from './user-search/user-search.component';
+import { ContactDetailComponent } from './contact-detail/contact-detail.component';
+import { ContactSearchComponent } from './contact-search/contact-search.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { UserSearchComponent } from './user-search/user-search.component';
     UserDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    UserSearchComponent
+    UserSearchComponent,
+    ContactDetailComponent,
+    ContactSearchComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,

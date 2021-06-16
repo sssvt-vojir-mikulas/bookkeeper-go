@@ -60,7 +60,7 @@ namespace BookKeeperBERest.Controllers
             Contact contact = new Contact { ID = id };
             try
             {
-                contact = _contactService.LoadUser(id);
+                contact = _contactService.LoadContact(id);
             }
             catch (Exception)
             {
@@ -84,7 +84,7 @@ namespace BookKeeperBERest.Controllers
             _logger.LogInformation(contact.ToString());
 
             // Is there a contact with the given ID?
-            bool exists = _contactService.ExistsUser(contact.ID);
+            bool exists = _contactService.ExistsContact(contact.ID);
             if ( ! exists)
             {
                 // HTTP status code: 404 (Not Found)
@@ -92,7 +92,7 @@ namespace BookKeeperBERest.Controllers
             }
 
             // Update the contact.
-            _contactService.SaveUser(contact);
+            _contactService.SaveContact(contact);
 
             // REST API recommends either a status code of 200 (OK) or 204 (No Content) to be returned.
             // HTTP status code: 200 (OK)
@@ -112,7 +112,7 @@ namespace BookKeeperBERest.Controllers
             _logger.LogInformation(contact.ToString());
 
             // Add a new contact.
-            Contact newContact = _contactService.SaveUser(contact);
+            Contact newContact = _contactService.SaveContact(contact);
 
             // HTTP status code: 201 (Created)
             return Created(this.Request.Path, newContact);
@@ -127,7 +127,7 @@ namespace BookKeeperBERest.Controllers
             _logger.LogInformation(id.ToString());
 
             // Is there a contact with the given ID?
-            bool exists = _contactService.ExistsUser(id);
+            bool exists = _contactService.ExistsContact(id);
             if ( ! exists )
             {
                 // HTTP status code: 404 (Not Found)
@@ -135,7 +135,7 @@ namespace BookKeeperBERest.Controllers
             }
 
             // Delete the contact.
-            Contact contactDeleted = _contactService.DeleteUser(id);
+            Contact contactDeleted = _contactService.DeleteContact(id);
 
             // HTTP status code: 200 (OK)
             return Ok(contactDeleted);
