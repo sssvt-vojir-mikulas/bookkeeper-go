@@ -16,9 +16,10 @@ namespace BookKeeperBECommon.BusinessObjects
         [Column("ID")]
         public int ID { get; set; }
 
-        //[ForeignKey]
+        [ForeignKey("Receipt")]
         [Column("RECEIPT_ID")]
         public Receipt Receipt { get; set; }
+        public int ReceiptId { get; set; }
 
         [Column("ORDINAL")]
         public int Ordinal { get; set; }
@@ -26,9 +27,10 @@ namespace BookKeeperBECommon.BusinessObjects
         [Column("DESCRIPTION")]
         public string Description { get; set; }
 
-        //[ForeignKey]
+        [ForeignKey("Accounting")]
         [Column("ACCOUNTING_CODE_ID")]
         public AccountingCode Accounting { get; set; }
+        public int AccountingId { get; set; }
 
         [Column("AMOUNT")]
         public decimal Amount { get; set; }

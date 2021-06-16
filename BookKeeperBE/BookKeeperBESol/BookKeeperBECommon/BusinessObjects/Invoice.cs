@@ -26,9 +26,10 @@ namespace BookKeeperBECommon.BusinessObjects
         [Column("INVOICE_NUMBER")]
         public string InvoiceNumber { get; set; }
 
-        //[ForeignKey]
+        [ForeignKey("Contact")]
         [Column("CONTACT_ID")]
         public Contact Contact { get; set; }
+        public int ContactId { get; set; }
 
         [Column("TOTAL_AMOUNT")]
         public decimal TotalAmount { get; set; }

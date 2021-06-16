@@ -23,17 +23,20 @@ namespace BookKeeperBECommon.BusinessObjects
         public int Ordinal { get; set; }
 
 
-        //[ForeignKey]
+        [ForeignKey("StatementItem")]
         [Column("STATEMENT_ITEM_ID")]
         public StatementItem StatementItem { get; set; }
+        public int StatementItemId { get; set; }
 
-        //[ForeignKey]
+        [ForeignKey("ReceiptItem")]
         [Column("RECEIPT_ITEM_ID")]
         public ReceiptItem ReceiptItem { get; set; }
+        public int ReceiptItemId { get; set; }
 
-        //[ForeignKey]
+        [ForeignKey("Invoice")]
         [Column("INVOICE_ID")]
         public Invoice Invoice { get; set; }
+        public int InvoiceId { get; set; }
 
         [Column("DATE_BOOKED")]
         public DateTime DateBooked { get; set; }
@@ -45,9 +48,10 @@ namespace BookKeeperBECommon.BusinessObjects
         [Column("DESCRIPTION")]
         public string Description { get; set; }
 
-        //[ForeignKey]
+        [ForeignKey("AccountingCode")]
         [Column("ACCOUNTING_CODE_ID")]
         public AccountingCode AccountingCode { get; set; }
+        public int AccountingCodeId { get; set; }
 
 
         [Column("CASH_CREDIT")]
