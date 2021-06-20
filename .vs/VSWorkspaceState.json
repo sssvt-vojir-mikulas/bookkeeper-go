@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BookKeeperBE",
+    "\\BookKeeperBE\\BookKeeperBESol",
+    "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon",
+    "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon\\BusinessObjects",
+    "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon\\EF",
+    "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon\\Enums",
+    "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon\\Repos",
+    "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon\\Services"
+  ],
+  "SelectedNode": "\\BookKeeperBE\\BookKeeperBESol\\BookKeeperBECommon\\Repos\\UserRepoMysql.cs",
+  "PreviewInSolutionExplorer": false
+}
